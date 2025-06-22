@@ -1,0 +1,26 @@
+   #pdf-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    #pdf-viewer {
+      width: 100%;
+      border: 1px solid #ccc;
+    }
+    #pdf-controls {
+      text-align: center;
+      margin: 10px 0;
+    }
+    button {
+      padding: 8px 16px;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+
+  .title {
+  font-family: "Kalam", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+

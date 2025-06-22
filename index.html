@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet" />
+    <title>Angela's Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      #pdf-container {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto;
+      }
+      #pdf-viewer {
+        width: 100%;
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      #pdf-controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin: 1rem 0;
+      }
+      #pdf-controls button {
+        padding: 0.5rem 1rem;
+        background-color: #3b82f6;
+        color: white;
+        border: none;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+      #pdf-controls button:hover {
+        background-color: #2563eb;
+      }
+      #auto-scroll {
+        background-color: #10b981 !important;
+      }
+      #auto-scroll:hover {
+        background-color: #059669 !important;
+      }
+      #page-num {
+        font-family: 'Kalam', cursive;
+        font-size: 1.1rem;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-50">
+    <header class="h-12 bg-gray-100 shadow-sm">
+      <div class="h-full flex items-center pl-8">
+        <h4 class="text-xl font-bold" style="font-family: 'Kalam', cursive;">Hi there! I'm Angela Garcia</h4>
+      </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-6">
+      <div id="pdf-container">
+        <div id="pdf-controls">
+          <button id="prev-page">Anterior</button>
+          <span id="page-num">Página 1</span>
+          <button id="next-page">Siguiente</button>
+          <button id="auto-scroll">Auto-Desplazamiento</button>
+        </div>
+        <canvas id="pdf-viewer"></canvas>
+      </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
