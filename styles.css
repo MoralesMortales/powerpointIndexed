@@ -1,60 +1,50 @@
-      body, html {
+   body, html {
         margin: 0;
         padding: 0;
+        height: 100%;
       }
       
-
-
       #pdf-container {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-      }
-  #pdf-viewer-container {
-  display: flex;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
-  height: 100%;
-  overflow: auto; /* Permite scroll si el PDF es muy grande */
-  background-color: #f0f0f0; /* Fondo gris claro para áreas no ocupadas */
-}
-
-#pdf-viewer {
-  max-width: 100%;
-  max-height: calc(100% - 120px); 
-  object-fit: contain; /* Mantiene relación de aspecto */
-  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra suave para mejor visibilidad */
-}            #pdf-container {
-        position: relative;
         width: 100%;
         height: calc(100vh - 96px); /* Resta header y footer */
+        display: flex;
+        flex-direction: column;
+        position: relative;
       }
       
       #pdf-viewer-container {
-        height: 100%;
-        position: relative;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+        background-color: #f0f0f0;
+      }
+      
+      #pdf-viewer {
+        max-width: 100%;
+        object-fit: contain;
       }
       
       #pdf-controls {
-        position: absolute;
-        bottom: 10px;
-        left: 0;
-        right: 0;
+        width: 100%;
+        padding: 0 6rem; /* Equivalente a px-24 */
         display: flex;
-        justify-content: center;
         gap: 10px;
-        z-index: 10;
+        background-color: white;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
       }
       
       #pdf-pagination-controls {
         display: flex;
+        flex-wrap: wrap;
         gap: 5px;
+        justify-content: center;
       }
       
       #pdf-pagination-controls button {
-        padding: 5px 10px;
+        width: 40px;
+        height: 40px;
         background-color: rgba(59, 130, 246, 0.8);
         color: white;
         border: none;
@@ -63,77 +53,37 @@
       }
       
       .download-btn {
-        padding: 5px 10px;
+        padding: 8px 16px;
         background-color: rgba(239, 68, 68, 0.8);
         color: white;
         border: none;
-        border-radius: 5px;
+        border-radius: 20px;
         cursor: pointer;
-        margin-left: 10px;
-      }
-#pdf-controls-container {
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  z-index: 10;
-}
-
-#pdf-pagination-controls {
-  display: flex;
-  gap: 10px;
-}
-
-.download-btn {
-  padding: 8px 16px;
-  background-color: rgba(239, 68, 68, 0.8);
-  color: white;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: all 0.2s;
-  font-family: 'Kalam', cursive;
-}
-
-.download-btn:hover {
-  background-color: rgba(220, 38, 38, 0.9);
-}
-      
-      .title {
+        transition: all 0.2s;
         font-family: "Kalam", cursive;
-        font-weight: 400;
-        font-style: normal;
       }
-         @media (max-width: 800px) {
-        #pdf-container{
-          display: flex;
-          justify-content: center;
-          align-items: center;
-                    overflow: hidden;
-
-        }
-        #pdf-viewer-container {
-                    display: flex;
-          justify-content: center;
-          align-items: center;
-
-          overflow: hidden;
-        }
-        
+      
+      .download-btn:hover {
+        background-color: rgba(220, 38, 38, 0.9);
+      }
+      
+      @media (max-width: 800px) {
         #pdf-viewer {
           width: 100vw;
           min-width: 600px;
-          max-width: none;
-          max-height: none;
-         }
-
-        #copy, #me{
-          font-size: clamp(10px,5vw,20px);
-
+        }
+        
+        #copy, #me {
+          font-size: clamp(10px, 5vw, 20px);
+        }
+        
+        #pdf-controls {
+          padding: 0 1rem;
+          flex-direction: column;
+          align-items: center;
+        }
+        
+        #pdf-pagination-controls {
+          margin-bottom: 1rem;
         }
       }
-      
